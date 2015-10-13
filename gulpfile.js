@@ -27,3 +27,7 @@ gulp.task('clean', function () {
         .pipe(clean());
 });
 
+gulp.task('dist', function () {
+    return gulp.src('*.html')
+        .pipe(gulp.dest('dist'));
+});
