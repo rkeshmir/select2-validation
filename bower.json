@@ -1,0 +1,16 @@
+{
+  "author": "Reza Keshmir",
+  "name": "select2-validation",
+  "version": "0.0.1",
+  "keywords": [
+    "select2",
+    "jQuery",
+    "Form-Validation"
+  ],
+  "dependencies": {
+    "select2": "~3.4",
+    "jquery": ">=1.6.4",
+    "jquery-validation": "~1.14.0",
+    "bootstrap": "~3.3.5"
+  }
+}

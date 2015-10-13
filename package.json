@@ -1,0 +1,22 @@
+{
+  "author": "https://github.com/rkeshmir",
+  "name": "select2-validation",
+  "keywords": [
+    "select2",
+    "jQuery",
+    "Form-Validation"
+  ],
+  "description": "This is a sample code of applying jQuery Validation Plugin (http://jqueryvalidation.org/) on selec2 (https://select2.github.io/)  components",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">= 0.8.4"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "~3.9.0",
+    "gulp-clean": "~0.3.1",
+    "gulp-main-bower-files": "~1.2.3",
+    "gulp-filter": "~3.0.1",
+    "gulp-rename": "~1.2.2"
+  }
+}
