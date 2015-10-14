@@ -2,9 +2,176 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>Select2 - Form Validation</title>
+    <!-- inject:css -->
+    <!-- endinject -->
+    <style rel="stylesheet">
+        #example {
+            border: solid 1px grey;
+            border-radius: 4px;
+            padding: 4px;
+        }
+        .select {
+            width: 100%;
+        }
+        .select2-input {
+            border-radius: 4px;
+        }
+        /* for validation */
+        .has-success .select2-selection , .has-success .select2-container,
+        .has-success .select2-choice, .has-success .select2-choices {
+            border-color: #3c763d;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+        }
+
+        .has-success .select2-selection:focus , .has-success .select2-container:focus,
+        .has-success .select2-choice:focus, .has-success .select2-choices:focus {
+            border-color: #2b542c;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 6px #67b168;
+        }
+
+        .has-error .select2-selection , .has-error .select2-container,
+        .has-error .select2-choice, .has-error .select2-choices {
+            border-color: #a94442;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+        }
+
+        .has-error .select2-selection:focus , .has-error .select2-container:focus,
+        .has-error .select2-choice:focus, .has-error .select2-choices:focus{
+            border-color: #843534;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 6px #ce8483;
+        }
+
+        .select2-choices {
+            border-radius: 4px;
+        }
+       /* .has-success .select2-choice {
+            border-color: #3c763d;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+        }
+
+        .has-success .select2-choice:focus {
+            border-color: #2b542c;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 6px #67b168;
+        }
+
+        .has-error .select2-choice {
+            border-color: #a94442;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+        }
+
+        .has-error .select2-choice:focus {
+            border-color: #843534;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 6px #ce8483;
+        }*/
+    </style>
 </head>
 <body>
+<sction id="header" >
+    <div class="row">
+        Demo under construction
+    </div>
+</sction>
+<sction id="main">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1 col-sm-12" id="example">
+            <form class="form-horizontal" action="" id="theForm">
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                    <div class="col-sm-10">
+                        <input name="email" type="email" class="form-control" id="inputEmail3" placeholder="Email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                    <div class="col-sm-10">
+                        <input name="password" type="password" class="form-control" id="inputPassword3" placeholder="Password" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="checkbox">
+                            <label>
+                                <input name="remember" type="checkbox"> Remember me
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputSelect3" class="col-sm-2 control-label">Favourite Color</label>
+                    <div class="col-sm-10">
+                        <select name="color" class="select" id="inputSelect3" placeholder="Select Color" required>
+                            <option>Red</option>
+                            <option>Blue</option>
+                            <option>Green</option>
+                            <option>Yellow</option>
+                            <option>Brown</option>
+                            <option>Orange</option>
+                        </select>
+                    </div>
+                </div>
 
+                <div class="form-group">
+                    <label for="inputSelect4" class="col-sm-2 control-label">Favourite Fruits</label>
+                    <div class="col-sm-10">
+                        <select name="fruits" class="select" id="inputSelect4" placeholder="Select Fruits"
+                                multiple="multiple" required>
+                            <option>Apple</option>
+                            <option>Bananas</option>
+                            <option>Grapes</option>
+                            <option>Pears</option>
+                            <option>Strawberry</option>
+                            <option>Blueberry</option>
+                            <option>Pomegranate</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default">Sign in</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</sction>
+<sction id="footer">
+    <div class="row">
+        Designed and developed by <a href="htt://rkeshmir.ir">Reza Keshmir</a>
+    </div>
+
+</sction>
+
+<!-- inject:js -->
+<!-- endinject -->
+
+<script type="text/javascript">
+    $(".select").select2({
+
+    });
+
+    $('#theForm').validate(
+        {
+            errorPlacement: function(error, element) {},
+            highlight: function(element) {
+                $(element)
+                        .closest('.form-group')
+                        .removeClass('has-success')
+                        .addClass('has-error');
+            },
+            unhighlight: function(element) {
+                $(element)
+                        .closest('.form-group')
+                        .removeClass('has-error')
+                        .addClass('has-success');
+            }
+        }
+    );
+
+    $('select').on('change', function() {  // when the value changes
+        $(this).valid(); // trigger validation on this element
+    });
+</script>
 </body>
 </html>

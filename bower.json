@@ -8,8 +8,8 @@
     "Form-Validation"
   ],
   "dependencies": {
-    "select2": "~3.4",
     "jquery": ">=1.6.4",
+    "select2": "~3.4",
     "jquery-validation": "~1.14.0",
     "bootstrap": "~3.3.5"
   }
